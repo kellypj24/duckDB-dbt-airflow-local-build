@@ -4,7 +4,7 @@ FROM ubuntu:20.04
 # Set environment variables
 ENV AIRFLOW_HOME=/usr/local/airflow
 # Setting Python version
-ENV PYTHON_VERSION=3.8
+ENV PYTHON_VERSION=3.11
 
 # Install Python and other dependencies
 RUN apt-get update \
@@ -24,7 +24,7 @@ RUN curl -sSL https://install.python-poetry.org | python3 -
 ENV PATH="/root/.local/bin:$PATH"
 
 # Set up virtual environment using Poetry
-RUN python3.8 -m venv /opt/venv
+RUN python3.11 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
 # Set up working directory

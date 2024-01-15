@@ -6,7 +6,7 @@ authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-apache-airflow = "2.1.2"
+apache-airflow = "2.8.0"
 dbt-core = "1.7.0"
 duckdb = "0.9.0"
 
