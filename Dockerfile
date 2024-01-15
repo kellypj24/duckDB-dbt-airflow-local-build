@@ -34,7 +34,7 @@ WORKDIR /usr/local/airflow
 COPY pyproject.toml poetry.lock* /usr/local/airflow/
 
 # Install Python dependencies using Poetry
-RUN poetry install --no-dev
+RUN poetry install --only main
 
 # Set up directories and user for Airflow
 RUN useradd -ms /bin/bash -d ${AIRFLOW_HOME} airflow \
