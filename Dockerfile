@@ -3,7 +3,8 @@ FROM ubuntu:20.04
 
 # Set environment variables
 ENV AIRFLOW_HOME=/usr/local/airflow
-ENV PYTHON_VERSION=3.8    # Python version
+# Setting Python version
+ENV PYTHON_VERSION=3.8
 
 # Install Python and other dependencies
 RUN apt-get update \
