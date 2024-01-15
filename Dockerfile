@@ -1,5 +1,5 @@
 # Use an Ubuntu base image
-FROM ubuntu:20.04
+FROM ubuntu:jammy
 
 # Set environment variables
 ENV AIRFLOW_HOME=/usr/local/airflow
