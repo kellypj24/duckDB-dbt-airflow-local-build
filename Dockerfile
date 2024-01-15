@@ -17,15 +17,19 @@ RUN apt-get update \
         curl \
     && rm -rf /var/lib/apt/lists/*
 
+# Install python3.11-venv separately
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends python3.11-venv
+
+# Create and activate virtual environment
+RUN python3.11 -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
 # Install Poetry
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
 # Add Poetry's bin directory to PATH
 ENV PATH="/root/.local/bin:$PATH"
-
-# Set up virtual environment using Poetry
-RUN python3.11 -m venv /opt/venv
-ENV PATH="/opt/venv/bin:$PATH"
 
 # Set up working directory
 WORKDIR /usr/local/airflow
