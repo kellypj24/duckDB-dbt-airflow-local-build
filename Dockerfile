@@ -3,8 +3,6 @@ FROM ubuntu:20.04
 
 # Set environment variables
 ENV AIRFLOW_HOME=/usr/local/airflow
-ENV AIRFLOW_VERSION=2.1.2  # Airflow version
-ENV DBT_VERSION=1.7.0     # dbt version
 ENV PYTHON_VERSION=3.8    # Python version
 
 # Install Python and other dependencies
@@ -36,9 +34,6 @@ COPY pyproject.toml poetry.lock* /usr/local/airflow/
 
 # Install Python dependencies using Poetry
 RUN poetry install --no-dev
-
-# Install DuckDB Python package
-RUN pip install duckdb
 
 # Set up directories and user for Airflow
 RUN useradd -ms /bin/bash -d ${AIRFLOW_HOME} airflow \
